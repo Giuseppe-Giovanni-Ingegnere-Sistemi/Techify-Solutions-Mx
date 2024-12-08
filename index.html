@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techify Solutions MX</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="img/LOGO TECHIFY SOLUTIONS TRANSPARENTE Y SIN NOMBRE.png" alt="Logo" class="logo-img">
+                <span class="company-name">Techify Solutions MX</span>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Servicios</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Reparación de Computadoras</a></li>
+                            <li><a href="#">Desarrollo de Páginas Web</a></li>
+                            <li><a href="#">Instalación de Software</a></li>
+                            <li><a href="#">Mantenimiento de Equipos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="nav-link">Proyectos</a></li>
+                    <li><a href="#" class="nav-link">Precios</a></li>
+                    <li><a href="#" class="nav-link">Nosotros</a></li>
+                    <li><a href="#" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="language-selector">
+                    <button class="lang-btn">ES <i class="fas fa-globe"></i></button>
+                    <ul class="lang-dropdown">
+                        <li><a href="#">Español</a></li>
+                        <li><a href="#">English</a></li>
+                    </ul>
+                </div>
+                <button class="cta-btn">¡Cotiza ahora!</button>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!--ENCABEZADO-->
+    <section class="hero">
+        <div class="video-overlay"></div>
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="img/Fondo1.mp4" type="video/mp4">
+        </video>
+        <div class="container">
+            <h1 class="glitch" data-text="Techify Solutions MX">Techify Solutions MX</h1>
+            <p>Expertos en servicios informáticos y desarrollo web para impulsar tu negocio</p>
+            <div class="hero-buttons">
+                <a href="#servicios" class="primary-btn">Nuestros Servicios</a>
+                <a href="#contacto" class="secondary-btn">Contáctanos</a>
+            </div>
+        </div>
+    </section>
+    <!--FIN ENCABEZADO-->
+
+
+    
+
+    <!-- VENTANA EMERGENTE -->
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h3>⚠️ Sitio en Desarrollo</h3>
+            <p>Esta página se encuentra actualmente en desarrollo. Disculpe las molestias.</p>
+            <button onclick="cerrarPopup()">Entendido</button>
+        </div>
+    </div>
+
+    <!-- FIN VENTANA EMERGENTE -->
+
+
+    <script src="main.js"></script>
+    
+</body>
+</html>
+
