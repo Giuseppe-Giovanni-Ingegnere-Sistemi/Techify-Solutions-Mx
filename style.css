@@ -458,3 +458,87 @@ body {
   }
 
   /*FIN VENTANA EMERGENTE*/
+
+  /*INICIO*/
+
+  /* Estilos de la página de inicio */
+.home {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.image-container {
+    margin-bottom: 2rem;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 1280px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button.primary {
+    background-color: black;
+    color: white;
+}
+
+.cta-button.primary:hover {
+    background-color: #333;
+}
+
+.cta-button.secondary {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+.cta-button.secondary:hover {
+    background-color: #f0f0f0;
+}
+
+/* Responsive design */
+@media (min-width: 640px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .cta-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/*FIN INICIO*/
