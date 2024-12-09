@@ -59,3 +59,18 @@ function cerrarPopup() {
   }
   
 // FIN VENTANA EMERGENTE
+
+
+// INICIO
+
+document.addEventListener('DOMContentLoaded', function() {
+    const videos = document.querySelectorAll('video');
+    videos.forEach(video => {
+        video.play().catch(error => {
+            console.log("Auto-play was prevented");
+            // Podríamos mostrar un botón de play aquí si es necesario
+        });
+    });
+});
+
+// FIN INICIO
