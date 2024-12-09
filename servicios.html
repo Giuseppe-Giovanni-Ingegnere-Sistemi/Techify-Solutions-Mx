@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Servicios</title>
+    <style>
+
+    /*NAVBAR*/
+        /* Estilos generales */
+
+        :root {
+    --primary-color: #0070f3;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --hover-color: #0056b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 -19px;
+}
+
+.navbar {
+    background-color: var(--background-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 98px;
+    height: 90px;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--background-color);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.dropdown-menu a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+    margin-right: 15px;
+}
+
+.search-input {
+    padding: 8px 30px 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+}
+
+.language-selector {
+    position: relative;
+    margin-right: 15px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.lang-dropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--background-color);
+    min-width: 120px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.lang-dropdown a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.lang-dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+.language-selector:hover .lang-dropdown {
+    display: block;
+}
+
+.cta-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: var(--hover-color);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-menu, .nav-actions {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-menu.active {
+        display: block;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: var(--background-color);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+    }
+
+    .nav-actions.active {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .search-container, .language-selector {
+        margin-bottom: 15px;
+    }
+}
+.dropdown-menu {
+    list-style: none; /* Elimina los puntos */
+    padding: 0; /* Quita el relleno */
+    margin: 0; /* Quita el margen */
+}
+
+.dropdown-menu a {
+    text-decoration: none; /* Opcional, para asegurar que no haya subrayado */
+}
+.lang-dropdown {
+    list-style: none; /* Elimina los puntos */
+    padding: 0; /* Quita el relleno */
+    margin: 0; /* Quita el margen */
+}
+
+.lang-dropdown a {
+    text-decoration: none; /* Opcional: elimina subrayado del texto */
+    color: var(--text-color); /* Asegúrate de mantener el color consistente */
+}
+
+.lang-dropdown a:hover {
+    background-color: #f1f1f1; /* Opcional: cambia el color al pasar el mouse */
+}
+/* FIN NAVBAR */
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #000000;
+            background-color: #FFFFFF;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h1, h2, h3 {
+            color: #000000;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Header */
+        header {
+            background-color: #FFFFFF;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000000;
+        }
+        .nav-links {
+            display: none;
+        }
+        .nav-links a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .nav-links a:hover {
+            color: #007BFF;
+        }
+
+        /* Servicios */
+        .services {
+            padding: 40px 0;
+        }
+        .service-item {
+            margin-bottom: 30px;
+        }
+        .service-icon {
+            font-size: 48px;
+            color: #007BFF;
+        }
+
+        /* Planes */
+        .plans {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+        }
+        .plan-card {
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .plan-card h3 {
+            color: #007BFF;
+        }
+
+        /* Por qué elegirnos */
+        .why-us {
+            padding: 40px 0;
+        }
+        .reason-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .reason-icon {
+            font-size: 24px;
+            color: #007BFF;
+            margin-right: 10px;
+        }
+
+        /* Llamada a la acción */
+        .cta {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: block;
+            }
+            .services-grid, .plans-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="img/LOGO TECHIFY SOLUTIONS TRANSPARENTE Y SIN NOMBRE.png" alt="Logo" class="logo-img">
+                <span class="company-name">Techify Solutions MX</span>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="servicios.html" class="nav-link">Servicios</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Reparación de Computadoras</a></li>
+                            <li><a href="#">Desarrollo de Páginas Web</a></li>
+                            <li><a href="#">Instalación de Software</a></li>
+                            <li><a href="#">Mantenimiento de Equipos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="nav-link">Proyectos</a></li>
+                    <li><a href="#" class="nav-link">Precios</a></li>
+                    <li><a href="#" class="nav-link">Nosotros</a></li>
+                    <li><a href="#" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="language-selector">
+                    <button class="lang-btn">ES <i class="fas fa-globe"></i></button>
+                    <ul class="lang-dropdown">
+                        <li><a href="#">Español</a></li>
+                        <li><a href="#">English</a></li>
+                    </ul>
+                </div>
+                <button class="cta-btn">¡Cotiza ahora!</button>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">💻</div>
+                    <h3>Reparación de Computadoras y Laptops</h3>
+                    <p>Soluciones integrales para equipos personales y de oficina.</p>
+                    <a href="#" class="btn">Ver Planes</a>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">🌐</div>
+                    <h3>Desarrollo de Páginas Web</h3>
+                    <p>Impulsa tu presencia en línea con soluciones modernas y personalizadas.</p>
+                    <a href="#" class="btn">Ver Planes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planes" class="plans">
+        <div class="container">
+            <h2>Planes Disponibles</h2>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <h3>Plan Básico</h3>
+                    <ul>
+                        <li>Diagnóstico gratuito</li>
+                        <li>Reparación de hardware y software menores</li>
+                        <li>Tiempo de entrega: 48 horas</li>
+                    </ul>
+                    <a href="#" class="btn">Seleccionar Plan</a>
+                </div>
+                <div class="plan-card">
+                    <h3>Plan Avanzado</h3>
+                    <ul>
+                        <li>Reparación integral y mantenimiento completo</li>
+                        <li>Limpieza interna y mejora de rendimiento</li>
+                        <li>Recuperación de datos</li>
+                        <li>Tiempo de entrega: 24 horas</li>
+                    </ul>
+                    <a href="#" class="btn">Seleccionar Plan</a>
+                </div>
+                <div class="plan-card">
+                    <h3>Plan Premium</h3>
+                    <ul>
+                        <li>Todos los beneficios del plan avanzado</li>
+                        <li>Soporte post-servicio por 30 días</li>
+                        <li>Atención prioritaria</li>
+                        <li>Tiempo de entrega: 12 horas</li>
+                    </ul>
+                    <a href="#" class="btn">Seleccionar Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="por-que-nosotros" class="why-us">
+        <div class="container">
+            <h2>¿Por qué Elegirnos?</h2>
+            <div class="reason-item">
+                <span class="reason-icon">✅</span>
+                <p>Profesionales altamente capacitados</p>
+            </div>
+            <div class="reason-item">
+                <span class="reason-icon">✅</span>
+                <p>Entregas rápidas y servicios garantizados</p>
+            </div>
+            <div class="reason-item">
+                <span class="reason-icon">✅</span>
+                <p>Planes adaptados a tus necesidades y presupuesto</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="cta">
+        <div class="container">
+            <h2>¿Listo para dar el siguiente paso?</h2>
+            <a href="#" class="btn">Solicitar Cotización</a>
+            <a href="#" class="btn" style="background-color: transparent; border: 1px solid #FFFFFF;">Hablar con un Especialista</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Tu Empresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para manejar el scroll suave a las secciones
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // NAVBAR
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    const navActions = document.querySelector('.nav-actions');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navActions.classList.toggle('active');
+    });
+
+    // Cerrar el menú móvil cuando se hace clic en un enlace
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+                navActions.classList.remove('active');
+            }
+        });
+    });
+
+    // Funcionalidad para el selector de idiomas
+    const langBtn = document.querySelector('.lang-btn');
+    const langDropdown = document.querySelector('.lang-dropdown');
+
+    langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.style.display = langDropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Cerrar el menú de idiomas cuando se hace clic fuera de él
+    document.addEventListener('click', () => {
+        langDropdown.style.display = 'none';
+    });
+
+    // Prevenir que el menú de idiomas se cierre al hacer clic dentro de él
+    langDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+});
+
+//FIN NAVBAR
+
+    </script>
+</body>
+</html>
